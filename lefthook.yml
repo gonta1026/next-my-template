@@ -13,4 +13,5 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: b:lint
+      run: yarn b:lint
+
