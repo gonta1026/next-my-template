@@ -3,6 +3,9 @@ import Link from 'next/link'
 import styles from './page.module.scss'
 
 export default function Home() {
+  function Hoge(n: number) {
+    n.Hoge()
+  }
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -10,6 +13,7 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
+
         <div>
           <div />
         </div>
