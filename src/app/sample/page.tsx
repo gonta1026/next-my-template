@@ -1,5 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+import Image from 'next/image'
+import styles from './page.module.scss'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            By{' '}
             <Image src="/vercel.svg" alt="Vercel Logo" className={styles.vercelLogo} width={100} height={24} priority />
           </a>
         </div>
@@ -76,5 +76,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  );
+  )
 }
