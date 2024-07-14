@@ -7,7 +7,7 @@ pre-push:
   commands:
     tsc:
       tags: type check
-      run: yarn tsc {staged_files}
+      run: yarn tsc
 
 pre-commit:
   parallel: true
