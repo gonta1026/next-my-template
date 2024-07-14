@@ -3,9 +3,6 @@ import Link from 'next/link'
 import styles from './page.module.scss'
 
 export default function Home() {
-  function Hoge(n: number) {
-    n.Hoge()
-  }
   return (
     <main className={styles.main}>
       <div className={styles.description}>

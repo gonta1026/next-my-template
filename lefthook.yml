@@ -14,4 +14,3 @@ pre-commit:
   commands:
     lint:
       run: yarn b:lint {staged_files}
-
