@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "format": "biome format . --write",
-    "b:lint": "biome lint ./src/**",
+    "lint": "biome lint ./src/**",
     "test": "vitest"
   },
   "dependencies": {

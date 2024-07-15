@@ -29,5 +29,8 @@ jobs:
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: yarn install
 
-      - name: App Lint
+      - name: Lint
         run: yarn lint
+
+      - name: Test
+        run: yarn test run

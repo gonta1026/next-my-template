@@ -16,4 +16,4 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: yarn b:lint {staged_files}
+      run: yarn lint {staged_files}
