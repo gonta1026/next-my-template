@@ -1,9 +1,9 @@
 import { render, fireEvent } from '@testing-library/react'
 import { screen } from '@testing-library/dom'
 import TodoApp from '@/app/sample/components/Todo'
-import { describe, expect } from 'vitest'
+import { expect, test } from 'vitest'
 
-describe('allows users to add and remove todos', () => {
+test('allows users to add and remove todos', () => {
   render(<TodoApp />)
 
   // Add a new todo
