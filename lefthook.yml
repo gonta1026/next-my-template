@@ -8,6 +8,9 @@ pre-push:
     tsc:
       tags: type check
       run: yarn tsc
+    test:
+      tags: test
+      run: yarn test
 
 pre-commit:
   parallel: true
