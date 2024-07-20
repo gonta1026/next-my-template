@@ -10,7 +10,7 @@ pre-push:
       run: yarn tsc
     test:
       tags: test
-      run: yarn test run
+      run: yarn test:vitest
 
 pre-commit:
   parallel: true

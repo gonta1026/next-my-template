@@ -9,6 +9,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
+    include: ['./src/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
