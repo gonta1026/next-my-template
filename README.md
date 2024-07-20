@@ -13,3 +13,5 @@ npm install -g git-cz
 ```
 git cz
 ```
+
+### db set up

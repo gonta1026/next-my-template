@@ -2,9 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.scss'
 
+export const metadata = {
+  title: 'e2e lesson',
+}
+
 export default function Home() {
   return (
     <main className={styles.main}>
+      <h1>Hello World🚀</h1>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
