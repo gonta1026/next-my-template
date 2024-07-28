@@ -10,6 +10,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     include: ['./src/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    env: {
+      // NODE_ENV: 'development',
+    },
   },
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
