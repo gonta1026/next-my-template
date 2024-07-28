@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { api } from '@/trpc/react'
 import styles from '../index.module.css'
 import { errorHandler } from '@/lib/error/errorHandler'
-
 export function LatestUser() {
+  // const { data: latestUser } = api.user.first.useQuery()
   const [latestUser] = api.user.first.useSuspenseQuery()
   const utils = api.useUtils()
   const [name, setName] = useState('')

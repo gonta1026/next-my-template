@@ -34,6 +34,7 @@ export default async function Home() {
         <div className={styles.showcaseContainer}>
           <p className={styles.showcaseText}>{hello ? hello.greeting : 'Loading tRPC query...'}</p>
         </div>
+        <Link href={'/sample'}>to sample page</Link>
         <LatestUser />
       </div>
     </main>
