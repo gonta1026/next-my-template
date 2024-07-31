@@ -1,13 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { type FC, useState } from 'react'
 
 import { api } from '@/trpc/react'
 import styles from '../index.module.css'
 import { errorHandler } from '@/lib/error/errorHandler'
-export function LatestUser() {
+import type { User } from '@prisma/client'
+
+type Props = {
+  latestUser: User
+}
+
+export const LatestUser: FC<Props> = ({ latestUser }) => {
   // const { data: latestUser } = api.user.first.useQuery()
-  const [latestUser] = api.user.first.useSuspenseQuery()
   const utils = api.useUtils()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')

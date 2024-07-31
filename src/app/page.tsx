@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 import { LatestUser } from '@/app/components/user'
-import { api } from '@/trpc/server'
 import styles from './index.module.css'
+import { api } from '@/trpc/server'
 export const metadata = {
   title: 'next template',
 }
 
 export default async function Home() {
-  const hello = await api.user.hello({ text: 'from tRPC' })
+  const latestUser = await api.user.first()
 
   return (
     <main className={styles.main}>
@@ -32,10 +32,10 @@ export default async function Home() {
           </Link>
         </div>
         <div className={styles.showcaseContainer}>
-          <p className={styles.showcaseText}>{hello ? hello.greeting : 'Loading tRPC query...'}</p>
+          {/* <p className={styles.showcaseText}>{hello ? hello.greeting : 'Loading tRPC query...'}</p> */}
         </div>
         <Link href={'/sample'}>to sample page</Link>
-        <LatestUser />
+        {latestUser && <LatestUser {...{ latestUser }} />}
       </div>
     </main>
   )
