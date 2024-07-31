@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export type CreateSchemaInput = typeof createSchema._type
+export type CreateSchemaInput = z.infer<typeof createSchema>
 
 export const createSchema = z.object({
   name: z

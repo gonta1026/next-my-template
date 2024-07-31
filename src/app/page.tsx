@@ -1,18 +1,26 @@
 import Link from 'next/link'
 
-import { LatestUser } from '@/app/components/user'
+import { LatestUser } from '@/app/components/latestUser'
 import styles from './index.module.css'
 import { api } from '@/trpc/server'
+// import { api as reactApi } from '@/trpc/react'
+
 export const metadata = {
   title: 'next template',
 }
 
 export default async function Home() {
   const latestUser = await api.user.first()
+  // const user = await api.user.hello({ text: 'hello', id: 5 })
+  const user = await api.user.hello({ text: 'hello', id: 5 })
 
   return (
     <main className={styles.main}>
       <h1>Hello World🚀</h1>
+      <p style={{ color: 'white' }}>
+        id: {user?.id}
+        name: {user?.name}
+      </p>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Create <span className={styles.pinkSpan}>T3</span> App

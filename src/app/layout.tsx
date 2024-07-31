@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import type { ReactNode } from 'react'
 import { TRPCReactProvider } from '@/trpc/react'
 import { HydrateClient } from '@/trpc/server'
+import type { ReactNode } from 'react'
 
 const inter = Inter({
   subsets: ['latin'],
