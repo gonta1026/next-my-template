@@ -12,7 +12,7 @@ type Props = {
 }
 
 export const LatestUser: FC<Props> = ({ latestUser }) => {
-  // const { data: latestUser } = api.user.first.useQuery()
+  const [user] = api.user.hello.useSuspenseQuery({ text: 'hello', id: 5 })
   const utils = api.useUtils()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -28,8 +28,8 @@ export const LatestUser: FC<Props> = ({ latestUser }) => {
 
   return (
     <div className={styles.showcaseContainer}>
-      {latestUser ? (
-        <p className={styles.showcaseText}>Your most recent post: {latestUser.name}</p>
+      {user ? (
+        <p className={styles.showcaseText}>Your most recent post: {user.name} です</p>
       ) : (
         <p className={styles.showcaseText}>You have no posts yet.</p>
       )}
