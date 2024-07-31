@@ -14,13 +14,18 @@
         "useNamingConvention": "off",
         "noDefaultExport": "off",
         "useFilenamingConvention": "off",
-        "noImplicitBoolean": "off"
+        "noImplicitBoolean": "off",
+        "useBlockStatements": "off",
+        "noUselessElse": "off"
       },
       "nursery": {
         "noUndeclaredDependencies": "off"
       },
       "complexity": {
         "noExcessiveCognitiveComplexity": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "info"
       }
     }
   },
