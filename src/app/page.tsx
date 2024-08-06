@@ -10,17 +10,15 @@ export const metadata = {
 }
 
 export default async function Home() {
-  const latestUser = await api.user.first()
+  // const latestUser = await api.user.first()
   // const user = await api.user.hello({ text: 'hello', id: 5 })
   const user = await api.user.hello({ text: 'hello', id: 5 })
+  api.user.hello.prefetch({ text: 'hello', id: 5 })
 
   return (
     <main className={styles.main}>
       <h1>Hello World🚀</h1>
-      <p style={{ color: 'white' }}>
-        id: {user?.id}
-        name: {user?.name}
-      </p>
+      <p style={{ color: 'white' }}>SSRで取得をしている name: {user?.name}</p>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Create <span className={styles.pinkSpan}>T3</span> App
@@ -43,7 +41,7 @@ export default async function Home() {
           {/* <p className={styles.showcaseText}>{hello ? hello.greeting : 'Loading tRPC query...'}</p> */}
         </div>
         <Link href={'/sample'}>to sample page</Link>
-        {latestUser && <LatestUser {...{ latestUser }} />}
+        <LatestUser />
       </div>
     </main>
   )
