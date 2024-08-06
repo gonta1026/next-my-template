@@ -7,7 +7,9 @@ export const createQueryClient = () =>
       queries: {
         // With SSR, we usually want to set some default staleTime
         // above 0 to avoid refetching immediately on the client
+        enabled: false,
         staleTime: 0,
+        refetchOnWindowFocus: false,
         // staleTime: 2 * 1000,
       },
       dehydrate: {

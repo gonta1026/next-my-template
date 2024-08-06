@@ -10,7 +10,7 @@ docker compose up -d
 ```
 マイグレーション実行
 ```
-prisma migrate dev
+npx prisma migrate dev
 ```
 型の生成
 ```
