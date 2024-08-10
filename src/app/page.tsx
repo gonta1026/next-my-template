@@ -3,24 +3,31 @@ import Link from 'next/link'
 import { LatestUser } from '@/app/components/latestUser'
 import styles from './index.module.css'
 import { api } from '@/trpc/server'
-// import { api as reactApi } from '@/trpc/react'
+import type { FC } from 'react'
 
 export const metadata = {
   title: 'next template',
 }
 
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+export const SometimesSuspend: FC = () => {
+  if (Math.random() < 0.5) {
+    throw sleep(1000)
+  }
+  return <p>Hello, world!</p>
+}
+
 export default async function Home() {
-  const latestUser = await api.user.first()
-  // const user = await api.user.hello({ text: 'hello', id: 5 })
-  const user = await api.user.hello({ text: 'hello', id: 5 })
+  const user = await api.user.hello({ text: 'hello', id: 1 })
 
   return (
     <main className={styles.main}>
       <h1>Hello World🚀</h1>
-      <p style={{ color: 'white' }}>
-        id: {user?.id}
-        name: {user?.name}
-      </p>
+      <p style={{ color: 'white' }}>SSRで取得をしている name: {user?.name}</p>
+      {/* <p style={{ color: 'white' }}>user2 SSRで取得をしている name: {user2?.data?.name}</p> */}
       <div className={styles.container}>
         <h2 className={styles.title}>
           Create <span className={styles.pinkSpan}>T3</span> App
@@ -43,7 +50,7 @@ export default async function Home() {
           {/* <p className={styles.showcaseText}>{hello ? hello.greeting : 'Loading tRPC query...'}</p> */}
         </div>
         <Link href={'/sample'}>to sample page</Link>
-        {latestUser && <LatestUser {...{ latestUser }} />}
+        <LatestUser />
       </div>
     </main>
   )
